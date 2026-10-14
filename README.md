@@ -47,7 +47,7 @@ SCHOOL CALC — проект, созданный для удобного и бы
 
 **Разработчик:** German  
 **Команда:** GERMAN'$ CODE TEAM  
-**Проект:** SCHOOL CALC 2.0
+**Проект:** SCHOOL CALC
 
 ---
 
@@ -118,7 +118,7 @@ Language availability may vary depending on the published version.
 
 **Developer:** German  
 **Team:** GERMAN'$ CODE TEAM  
-**Project:** SCHOOL CALC 2.0
+**Project:** SCHOOL CALC
 
 ---
 
