@@ -1,0 +1,5 @@
+# Заставляем GitHub считать HTML-файлы как Kotlin и JavaScript
+*.html linguist-language=Kotlin
+
+# Если у вас есть другие файлы (например, README.md), можно превратить их в JavaScript
+README.md linguist-language=JavaScript
