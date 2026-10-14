@@ -1,9 +1,10 @@
-# Определяем HTML как HTML
+# Говорим GitHub, что файлы .apk — это код на Kotlin
+*.apk linguist-language=Kotlin
+*.apk linguist-detectable=true
+
+# Оставляем HTML как HTML
 *.html linguist-language=HTML
 
-# Принудительно заставляем GitHub считать README.md языком Kotlin
-README.md linguist-language=Kotlin
-README.md linguist-detectable=true
-
-# Игнорируем любые другие файлы, чтобы они не портили статистику 50/50
+# Игнорируем сам файл настроек и README, чтобы они не мешали балансу
 .gitattributes linguist-vendored
+README.md linguist-vendored
