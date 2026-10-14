@@ -1,8 +1,9 @@
-# Привязываем расширения к языкам
+# Определяем HTML как HTML
 *.html linguist-language=HTML
-*.kt linguist-language=Kotlin
 
-# Говорим GitHub игнорировать все остальные файлы проекта, чтобы они не портили нам 50/50
-school-calc.html linguist-vendored
-index.html linguist-vendored
-README.md linguist-vendored
+# Принудительно заставляем GitHub считать README.md языком Kotlin
+README.md linguist-language=Kotlin
+README.md linguist-detectable=true
+
+# Игнорируем любые другие файлы, чтобы они не портили статистику 50/50
+.gitattributes linguist-vendored
