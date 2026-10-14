@@ -1,4 +1,8 @@
+# Привязываем расширения к языкам
 *.html linguist-language=HTML
-*.css linguist-language=CSS
-*.js linguist-language=JavaScript
 *.kt linguist-language=Kotlin
+
+# Говорим GitHub игнорировать все остальные файлы проекта, чтобы они не портили нам 50/50
+school-calc.html linguist-vendored
+index.html linguist-vendored
+README.md linguist-vendored
