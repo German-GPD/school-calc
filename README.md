@@ -1,4 +1,4 @@
-# SCHOOL CALC 2.0
+# SCHOOL CALC
 
 **Современный калькулятор школьных оценок от GERMAN'$ CODE TEAM**
 
@@ -69,7 +69,7 @@ SCHOOL CALC — проект, созданный для удобного и бы
 
 
 
-# SCHOOL CALC 2.0
+# SCHOOL CALC
 
 **A modern school grade calculator by GERMAN'$ CODE TEAM**
 
