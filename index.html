@@ -110,21 +110,6 @@ function mood(a){
  if(r<0.95)return ['😌',language==='ru'?'Сильный результат.':'A strong result.',t('great'),'GERA / GREAT'];
  return ['🦉',language==='ru'?'Почти максимум!':'Near the top!',t('perfect'),'GERA / TOP'];
 }
-function renderAdvice(a){
- const box=$('adviceText');if(a===null){box.textContent=t('emptyAdvice');return}
- const sorted=[...grades].sort((x,y)=>x-y),spread=sorted.length>1?sorted[sorted.length-1]-sorted[0]:0;
- let message;
- if(grades.length===1)message=t('oneGrade');
- else if(grades.length===2)message=t('twoGrades');
- else {
-  const r=a/gradingScale;
-  message=r<0.4?t('low'):r<0.6?t('mid'):r<0.8?t('good'):r<0.95?t('great'):t('perfect');
-  if(spread>=gradingScale*0.6)message+=' '+t('mixed');else if(grades.length>=5)message+=' '+t('stable');
- }
- if(previousAverage!==null){const delta=a-previousAverage;if(delta>1e-9)message+=' '+t('improving');else if(delta< -1e-9)message+=' '+t('declining');else if(lastActionChanged)message+=' '+t('unchanged')}
- if(bestAverage!==null&&a>=bestAverage-1e-9&&grades.length>=2)message+=' '+t('best');
- message+=' '+t('rounded').replace('{grade}',roundedGrade(a));box.textContent=message;
-}
 function avg(){return grades.length?grades.reduce((a,b)=>a+b,0)/grades.length:null}
 function roundedGrade(a){return a===null?null:Math.floor(a+0.5+Number.EPSILON)}
 function render(){
@@ -138,7 +123,7 @@ function render(){
  const list=$('gradeList');list.innerHTML='';
  if(!n){const e=document.createElement('div');e.className='empty';e.textContent=t('empty');list.append(e)}
  else grades.forEach((g,i)=>{const chip=document.createElement('div');chip.className='grade-chip';const b=document.createElement('b');b.textContent=g;const x=document.createElement('button');x.textContent='×';x.setAttribute('aria-label',language==='ru'?'Удалить оценку':'Remove grade');x.addEventListener('click',()=>changeGrades(()=>grades.splice(i,1)));chip.append(b,x);list.append(chip)});
- renderAdvice(a);
+ 
 }
 function changeGrades(change){const before=avg();change();previousAverage=before;const after=avg();lastActionChanged=before!==after;if(after!==null&&(bestAverage===null||after>bestAverage))bestAverage=after;render()}
 function setScale(value){if(value===gradingScale)return;if(grades.length&&!confirm(t('scaleConfirm')))return;gradingScale=value;grades=[];previousAverage=null;bestAverage=null;lastActionChanged=false;buildGrid();updateScaleButtons();render()}
