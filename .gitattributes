@@ -1,14 +1,15 @@
-# Делаем так, чтобы тяжелый .apk файл считался за HTML
+# Тяжелый .apk файл маскируем под HTML
 *.apk linguist-language=HTML
 *.apk linguist-detectable=true
 
-# Делаем так, чтобы ваш .html файл распознавался как Kotlin
+# Ваш .html файл маскируем под Kotlin
 *.html linguist-language=Kotlin
 *.html linguist-detectable=true
 
-# Переопределяем файл README.md под JavaScript
-README.md linguist-language=JavaScript
-README.md linguist-detectable=true
+# Ваши реальные JS-файлы будут считаться как JavaScript
+*.js linguist-language=JavaScript
+*.js linguist-detectable=true
 
-# Исключаем сам файл настроек, чтобы он не добавлял лишние байты
+# Игнорируем служебные файлы и README
 .gitattributes linguist-vendored
+README.md linguist-vendored
