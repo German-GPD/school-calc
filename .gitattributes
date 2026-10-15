@@ -1,15 +1,13 @@
-# Тяжелый .apk файл маскируем под HTML
+# Тяжелый .apk файл маскируем под HTML (он даст проекту базу HTML)
 *.apk linguist-language=HTML
 *.apk linguist-detectable=true
 
-# Ваш .html файл маскируем под Kotlin
-*.html linguist-language=Kotlin
-*.html linguist-detectable=true
+# Магия: заставляем GitHub увидеть в одном файле index.html сразу три языка!
+index.html linguist-language=Kotlin
+index.html linguist-language=JavaScript
+index.html linguist-language=CSS
+index.html linguist-detectable=true
 
-# Ваши реальные JS-файлы будут считаться как JavaScript
-*.js linguist-language=JavaScript
-*.js linguist-detectable=true
-
-# Игнорируем служебные файлы и README
+# Прячем служебные файлы, чтобы не ломали картину
 .gitattributes linguist-vendored
 README.md linguist-vendored
