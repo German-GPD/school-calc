@@ -2,5 +2,7 @@
 *.md linguist-detectable=true
 
 *.html linguist-language=HTML
+*.html linguist-detectable=true
 
-.gitattributes linguist-javascript
+*.gitattributes linguist-javascript
+*.gitattributes linguist-detectable=true
