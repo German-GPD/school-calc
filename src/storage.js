@@ -1,8 +1,8 @@
 /**
- * Versioned local persistence for SCHOOL CALC.
+ * Persists interface preferences only. Grades intentionally remain in memory for this session.
  * All access is guarded because storage can be disabled or unavailable in private contexts.
  */
-import { isValidScale, validateGrades } from './grade-engine.js';
+import { isValidScale } from './grade-engine.js';
 
 export const STORAGE_KEY = 'school-calc.state.v1';
 
@@ -25,7 +25,7 @@ function getStorage() {
 export function normalizeState(input) {
   const value = input && typeof input === 'object' ? input : {};
   const gradingScale = isValidScale(value.gradingScale) ? value.gradingScale : DEFAULT_STATE.gradingScale;
-  const grades = validateGrades(value.grades, gradingScale) ? [...value.grades] : [];
+  const grades = []; // Never restore or persist grades between sessions.
 
   return {
     grades,
