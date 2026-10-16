@@ -1,0 +1,3 @@
+# Keep the single-file published app intact, but omit it from Linguist totals.
+# The language bar describes the separately documented reference implementations.
+index.html linguist-vendored=true
