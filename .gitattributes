@@ -1,8 +1,0 @@
-*.apk linguist-language=Vue
-*.apk linguist-detectable=true
-
-index.html linguist-language=Kotlin
-index.html linguist-detectable=true
-
-.gitattributes linguist-language=HTML
-.gitattributes linguist-detectable=true
