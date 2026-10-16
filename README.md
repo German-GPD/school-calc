@@ -126,3 +126,23 @@ This project is licensed under **CC BY-NC 4.0** — [creativecommons.org/license
 
 *Создано с помощью кода. Развивается с амбициями.*  
 *Built with code, developed with ambition.*
+
+## 🛠️ Веб-разработка (Vue 3 + Vite)
+
+Веб-версия собирается через Vue 3 и Vite. Интерфейс находится в `src/App.vue`, стили — в `style.css`, а существующая логика оценок пока сохранена в `script.js`, чтобы не менять поведение приложения при переносе.
+
+### Запуск локально
+
+```bash
+npm install
+npm run dev
+```
+
+### Сборка
+
+```bash
+npm run build
+npm run preview
+```
+
+GitHub Actions собирает сайт и публикует `dist/` в GitHub Pages при push в `main`. Для включения автоматической публикации выберите **Settings → Pages → Build and deployment → Source → GitHub Actions**.
