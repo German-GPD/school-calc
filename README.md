@@ -10,7 +10,6 @@
 
 ![Version](https://img.shields.io/badge/version-2.1.0-8db9ff)
 ![Stack](https://img.shields.io/badge/stack-HTML%20%7C%20CSS%20%7C%20JS-339933)
-![Tests](https://img.shields.io/badge/tests-Node.js-339933?logo=nodedotjs&logoColor=white)
 ![Languages](https://img.shields.io/badge/languages-RU%20%7C%20EN-8A2BE2)
 
 *Считай. Анализируй. Двигайся к цели.*
@@ -56,7 +55,6 @@
 | `src/storage.js` | Сохранение и проверка состояния |
 | `src/App.vue` | Исходный вариант разметки Vue; для запуска сайта не требуется |
 | `event.txt` | Текст информационного блока |
-| `tests/grade-engine.test.js` | Автоматические тесты |
 | `.github/workflows/deploy.yml` | Проверка и публикация на GitHub Pages |
 
 **Сайт работает без Vite, Vue runtime и npm-пакетов.** GitHub Actions копирует статические файлы и публикует их на GitHub Pages.
@@ -65,17 +63,9 @@
 
 Нужен современный браузер. Из-за JavaScript-модулей лучше запускать через локальный сервер, например расширение Live Server в VS Code.
 
-### Тесты
+#### Публикация
 
-Требуется Node.js:
-
-```bash
-npm test
-```
-
-### Публикация
-
-Изменения в ветке `main` автоматически запускают GitHub Actions. Перед публикацией выполняются тесты, затем статические файлы отправляются на GitHub Pages.
+Изменения в ветке `main` автоматически запускают GitHub Actions. Статические файлы отправляются на GitHub Pages.
 
 ---
 
