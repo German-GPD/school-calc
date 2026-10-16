@@ -8,7 +8,7 @@
 </div>
 
 <main class="app">
-<header class="topbar"><div class="brand"><div class="brand-icon">S_</div><div><div class="brand-name">SCHOOL CALC</div><div class="brand-sub">GRADE TRACKER / 2.0.0</div></div></div><button class="icon-btn" id="settingsOpen" aria-label="Settings">⚙</button></header>
+<header class="topbar"><div class="brand"><div class="brand-icon">S_</div><div><div class="brand-name">SCHOOL CALC</div><div class="brand-sub">GRADE TRACKER / 2.1.0</div></div></div><button class="icon-btn" id="settingsOpen" aria-label="Settings">⚙</button></header>
 
 <section class="hero">
  <div class="hero-top"><div class="label"><span class="pixel"></span><span data-t="average">СРЕДНИЙ БАЛЛ</span></div><div class="tag" id="scaleTag">0—10 / BY</div></div>
@@ -30,7 +30,7 @@
 <div class="bottom"><div class="session-info"><div>● <span data-t="session">ТЕКУЩАЯ СЕССИЯ</span></div><div data-t="notSaved">СОХРАНЯЕТСЯ НА ЭТОМ УСТРОЙСТВЕ</div></div><button class="clean-btn" id="cleanBtn">↺ CLEAN</button></div>
 
 <section class="dev-card"><div class="dev-eyebrow">INDEPENDENT DEVELOPER / 01</div><div class="dev-name">GERMAN</div><div class="dev-role" data-t="devRole">Разработчик SCHOOL CALC</div><div class="dev-bottom"><a class="telegram" href="https://t.me/german_gpd" target="_blank" rel="noopener">↗ TELEGRAM @german_gpd</a><div class="dev-sign">MADE WITH CARE<br>GERMAN'$ CODE TEAM</div></div></section>
-<footer class="footer"><span>SCHOOL CALC / v2.0.0</span><span>GERMAN'$ CODE TEAM ♥</span></footer>
+<footer class="footer"><span>SCHOOL CALC / v2.1.0</span><span>GERMAN'$ CODE TEAM ♥</span></footer>
 </main>
 
 <div class="backdrop" id="settingsBackdrop"><section class="dialog" role="dialog" aria-modal="true" aria-labelledby="settingsTitle"><div class="dialog-head"><div><div class="label"><span class="pixel"></span>CONFIG / 01</div><div class="dialog-title" id="settingsTitle" data-t="settings">Настройки</div></div><button class="close-btn" id="settingsClose" aria-label="Close">×</button></div>
@@ -39,7 +39,7 @@
 <div class="colors"><button class="color-btn" data-color="green" aria-label="Green"></button><button class="color-btn" data-color="blue" aria-label="Blue"></button><button class="color-btn" data-color="red" aria-label="Red"></button><button class="color-btn" data-color="yellow" aria-label="Yellow"></button><button class="color-btn" data-color="purple" aria-label="Purple"></button></div>
 <div class="setting-row" style="margin-top:28px"><div><div class="setting-name" data-t="gradingSystem">Система оценивания</div><div class="setting-desc" data-t="gradingSystemDesc">При смене шкалы оценки очищаются</div></div><div class="segment"><button id="scale5Btn">5</button><button id="scale10Btn" class="active">10</button><button id="scale12Btn">12</button></div></div>
 <div class="setting-row" style="margin-top:28px"><div><div class="setting-name" data-t="language">Язык</div><div class="setting-desc" data-t="languageDesc">Язык интерфейса</div></div><div class="segment"><button id="ruBtn">RU</button><button id="enBtn">EN</button></div></div>
-<div class="dialog-note">SCHOOL CALC / 2.0.0<br>NO ACCOUNT. NO CLOUD. JUST YOUR GRADES.</div></section></div>
+<div class="dialog-note">SCHOOL CALC / 2.1.0<br>NO ACCOUNT. NO CLOUD. JUST YOUR GRADES.</div></section></div>
 
 <div class="toast" id="toast" role="status"></div>
 </template>
