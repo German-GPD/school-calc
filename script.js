@@ -13,7 +13,7 @@ let accent=savedState?.accent??accentNames[Math.floor(Math.random()*accentNames.
 let gradingScale=savedState?.gradingScale??10;
 let toastTimer;
 
-const colors={green:'#d8ff42',blue:'#8db9ff',red:'#ff9588',yelpurple:'#c5a5ff'};
+const colors={green:'#d8ff42',blue:'#8db9ff',red:'#ff9588',yellow:'#ffd96b',purple:'#c5a5ff'};
 const W={
 ru:{
 average:'СРЕДНИЙ БАЛЛ',gradesAdded:'ОЦЕНОК ВНЕСЕНО',scale:'ШКАЛА УСПЕВАЕМОСТИ',addGrade:'ДОБАВИТЬ ОЦЕНКУ',history:'ТВОИ ОЦЕНКИ',session:'ТЕКУЩАЯ СЕССИЯ',notSaved:'ОЦЕНКИ НЕ СОХРАНЯЮТСЯ',settings:'Настройки',appearance:'Оформление',appearanceDesc:'Тема приложения',light:'СВЕТ',dark:'ТЬМА',accent:'Акцентный цвет',accentDesc:'Выбери свой цвет',language:'Язык',languageDesc:'Язык интерфейса',empty:'ПОКА НЕТ ОЦЕНОК — ДОБАВЬ ПЕРВУЮ',clean:'↺ CLEAN',devRole:'Разработчик SCHOOL CALC',confirm:'Удалить все оценки?',gradingSystem:'Система оценивания',gradingSystemDesc:'При смене шкалы оценки очищаются',scaleConfirm:'Сменить шкалу? Все текущие оценки будут удалены.',count:n=>`${n} ${plural(n,['оценка','оценки','оценок'])}`
