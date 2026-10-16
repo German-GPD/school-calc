@@ -2,18 +2,21 @@
 
 # 🧮 SCHOOL CALC
 
-### Умный калькулятор школьных оценок
+### A focused grade calculator built for students  
+### Удобный калькулятор оценок для школьников
 
-**Создано German · GERMAN'$ CODE TEAM**
+**Created by German · GERMAN'$ CODE TEAM**
 
-[🌐 Открыть приложение](https://german-gpd.github.io/school-calc/) · [💻 Исходный код](https://github.com/German-GPD/school-calc) · [✉️ Связаться с разработчиком](https://t.me/german_gpd)
+[🌐 Live App](https://german-gpd.github.io/school-calc/) · [💻 Source Code](https://github.com/German-GPD/school-calc) · [✉️ Developer](https://t.me/german_gpd)
 
-![Version](https://img.shields.io/badge/version-2.1.0-8db9ff)
-![Stack](https://img.shields.io/badge/HTML-CSS-JavaScript-339933)
-![Languages](https://img.shields.io/badge/language-RU%20%7C%20EN-8A2BE2)
-![License](https://img.shields.io/badge/license-CC%20BY--NC%204.0-c5a5ff)
+![Version](https://img.shields.io/badge/version-2.1.0-d8ff42?style=for-the-badge)
+![Vue](https://img.shields.io/badge/Vue-3-42b883?style=for-the-badge&logo=vuedotjs&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-6-646cff?style=for-the-badge&logo=vite&logoColor=white)
+![Languages](https://img.shields.io/badge/languages-RU%20%2F%20EN-8db9ff?style=for-the-badge)
+![License](https://img.shields.io/badge/license-CC%20BY--NC%204.0-c5a5ff?style=for-the-badge)
 
-*Считай. Анализируй. Становись лучше.*
+*Track your grades. Understand your progress. Keep moving.*  
+*Следи за оценками. Понимай свой результат. Двигайся дальше.*
 
 </div>
 
@@ -21,89 +24,213 @@
 
 ## 🇷🇺 О проекте
 
-**SCHOOL CALC** — веб-приложение для расчёта среднего балла и удобного учёта школьных оценок. Проект создан German в рамках **GERMAN'$ CODE TEAM**.
+**SCHOOL CALC** — лёгкое веб-приложение для расчёта среднего балла и учёта школьных оценок. Проект создан **German** в рамках **GERMAN'$ CODE TEAM**. Интерфейс сочетает минималистичный тёмный дизайн, яркий акцентный цвет и маскота Геру 🦉.
 
-Приложение работает прямо в браузере: аккаунт не нужен, а оценки не отправляются на сервер.
+Приложение запускается в браузере: регистрация не нужна, а оценки не отправляются на сервер.
 
-## ✨ Возможности
+### ✨ Возможности
 
-- **Мгновенный расчёт среднего балла** при добавлении и удалении оценок.
-- **Три шкалы:** 5-, 10- и 12-балльная.
-- **Управление оценками:** добавление, удаление и очистка списка.
-- **Два языка:** русский и английский.
-- **Автоматическая тема:** приложение подстраивается под светлую или тёмную тему устройства и реагирует на её изменение.
-- **Автоматический язык:** русский при русской локали устройства, английский — при любой другой.
-- **Случайный акцент:** один из пяти цветов выбирается заново при каждом запуске.
-- **Гера 🦉:** маскот приложения с реакциями на результат.
-- **Информационный блок:** текст объявления задаётся в файле `event.txt`.
-- **Адаптивный интерфейс:** поддерживаются компьютеры и мобильные устройства.
+- **Средний балл в реальном времени** — результат пересчитывается после добавления или удаления оценки.
+- **Три шкалы оценивания** — 5-, 10- и 12-балльная.
+- **Управление оценками** — добавление оценок, удаление отдельных записей и очистка списка.
+- **Русский и английский** — язык можно выбрать в настройках; при первом запуске учитывается язык браузера.
+- **Светлая и тёмная темы** — можно выбрать оформление вручную; по умолчанию учитывается системная тема устройства.
+- **Пять акцентных цветов** — зелёный, синий, красный, жёлтый и фиолетовый.
+- **Гера 🦉** — маскот с реакциями на текущий результат.
+- **Блок объявлений** — содержимое берётся из `event.txt`.
+- **Адаптивная вёрстка** — интерфейс рассчитан на компьютеры и мобильные устройства.
+- **Публикация через GitHub Actions** — изменения в `main` запускают сборку и развёртывание сайта.
 
-Средний балл считается как обычное арифметическое среднее. Если в школе оценки имеют разный вес, результат может отличаться от официального.
+> **Важно:** средний балл — это обычное арифметическое среднее. Если в школе используются оценки с разным весом, результат может отличаться от официального.
 
-## ⚙️ Как сохраняются данные
+### 💾 Данные и приватность
 
-- **Оценки** хранятся только в текущем сеансе и пропадают после перезагрузки страницы.
-- **Тема, язык и цвет акцента** определяются заново при запуске и не сохраняются.
-- **Шкала оценивания** — единственная настройка, которая сохраняется в браузере.
-- **Аккаунт не требуется.** Приложение не отправляет оценки на сервер.
+- Оценки существуют **только в текущем сеансе** и не восстанавливаются после перезагрузки страницы.
+- Приложение не требует аккаунта и не отправляет оценки на сервер.
+- Выбранная шкала сохраняется в локальном хранилище браузера.
+- Язык, тема и акцентный цвет в текущей реализации заново определяются при запуске.
 
-## 🛠️ Технологии
+### 🚀 Запуск локально
 
-- HTML5
-- CSS3
-- JavaScript (ES modules)
-- GitHub Pages
-- GitHub Actions для автоматической публикации
+**Требуется:** установленный [Node.js](https://nodejs.org/).
 
-Проект использует Vue 3 и Vite. GitHub Actions собирает приложение в статические файлы перед публикацией на GitHub Pages.
+```bash
+git clone https://github.com/German-GPD/school-calc.git
+cd school-calc
+npm install
+npm run dev
+```
 
-## 📁 Структура проекта
+Чтобы проверить production-сборку:
 
-| Файл | Назначение |
-|---|---|
-| `index.html` | Страница приложения |
-| `style.css` | Оформление, темы и адаптивная вёрстка |
-| `script.js` | Логика интерфейса и настройки |
-| `src/grade-engine.js` | Расчёт среднего балла и работа с оценками |
-| `src/storage.js` | Сохранение выбранной шкалы |
-| `src/App.vue` | Vue-компонент интерфейса |
-| `event.txt` | Текст информационного блока для разработки |
-| `public/event.txt` | Текст объявления, включаемый в production-сборку |
-| `src/main.js` | Точка входа Vue-приложения |
-| `package.json` | Зависимости и команды проекта |
-| `vite.config.js` | Настройки сборки Vite |
-| `.github/workflows/deploy.yml` | Автоматическая публикация на GitHub Pages |
+```bash
+npm run build
+npm run preview
+```
 
-## 🚀 Запуск и публикация
+### 🧰 Технологии
 
-**Открыть приложение:** [german-gpd.github.io/school-calc](https://german-gpd.github.io/school-calc/)
+| Технология | Использование |
+| --- | --- |
+| HTML5 | Структура страницы |
+| CSS3 | Оформление, темы и адаптивность |
+| JavaScript (ES modules) | Логика приложения |
+| Vue 3 | Корневой компонент и запуск интерфейса |
+| Vite 6 | Локальный сервер и production-сборка |
+| GitHub Pages | Хостинг приложения |
+| GitHub Actions | Автоматическая сборка и публикация |
 
-Для локального запуска установите Node.js, выполните `npm install`, затем `npm run dev`. Для проверки production-сборки используйте `npm run build` и `npm run preview`.
+### 📂 Структура проекта
 
-Изменения в ветке `main` автоматически запускают GitHub Actions и публикацию на GitHub Pages.
+```text
+school-calc/
+├── .github/workflows/
+│   └── deploy.yml          # Автоматическая публикация
+├── public/
+│   └── event.txt           # Объявление для опубликованной версии
+├── src/
+│   ├── App.vue             # Vue-компонент приложения
+│   ├── main.js             # Точка входа Vue
+│   ├── grade-engine.js     # Расчёт среднего балла
+│   └── storage.js          # Сохранение шкалы оценивания
+├── index.html              # HTML-точка входа
+├── script.js               # Логика интерфейса
+├── style.css               # Стили и темы
+├── event.txt               # Локальный файл объявления
+├── package.json            # Зависимости и команды
+├── vite.config.js           # Настройки Vite
+├── LICENSE                  # Условия использования
+└── README.md                # Документация проекта
+```
 
-## 📜 Авторство и условия использования
+### 📣 Объявление в приложении
 
-**Автор проекта — German (GERMAN'$ CODE TEAM).** Исходный код и материалы проекта распространяются по лицензии **Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)**.
+Чтобы изменить текст информационного блока в опубликованной версии, отредактируй файл **`public/event.txt`** и отправь изменения в репозиторий. Для локальной разработки также предусмотрен корневой `event.txt`.
 
-- При копировании, распространении или изменении проекта необходимо указывать автора, ссылку на исходный проект и лицензию, а также отмечать внесённые изменения.
-- **Запрещено выдавать проект или его части за собственную оригинальную работу.**
-- Коммерческое использование без разрешения, выходящего за рамки лицензии, не допускается.
-- При нарушении авторских прав или условий лицензии автор оставляет за собой право потребовать прекращения нарушения и обратиться за правовой защитой, в том числе в суд, в соответствии с применимым законодательством.
+### 📜 Лицензия и авторство
 
-Полный текст лицензии: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/legalcode).
+Проект распространяется по лицензии **Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)**. Подробности — в файле [LICENSE](LICENSE) и в [полном тексте лицензии](https://creativecommons.org/licenses/by-nc/4.0/legalcode).
 
-## 🔗 Ссылки
+При использовании или изменении проекта необходимо указывать автора, ссылку на исходный репозиторий и лицензию, а также отмечать внесённые изменения. Коммерческое использование без отдельного разрешения не допускается. Нельзя представлять проект или его части как собственную оригинальную работу.
 
-- [🌐 SCHOOL CALC — веб-приложение](https://german-gpd.github.io/school-calc/)
-- [💻 Репозиторий GitHub](https://github.com/German-GPD/school-calc)
-- [✉️ Telegram разработчика](https://t.me/german_gpd)
+### 🔗 Ссылки и сообщество
+
+- 🌐 [Открыть SCHOOL CALC](https://german-gpd.github.io/school-calc/)
+- 💻 [Репозиторий на GitHub](https://github.com/German-GPD/school-calc)
+- 👨‍💻 [Telegram разработчика — @german_gpd](https://t.me/german_gpd)
+- 🧩 [GERMAN'$ CODE TEAM — Telegram](https://t.me/g_code_team)
+- 🦊 [RedFox — Telegram-канал](https://t.me/redfox_g56)
+
+---
+
+## 🇬🇧 About the Project
+
+**SCHOOL CALC** is a lightweight web app for calculating grade averages and keeping track of school grades. It is created by **German** as part of **GERMAN'$ CODE TEAM**. The interface combines a minimal, premium-inspired look, vivid accent colors, and the app mascot, Gera the owl 🦉.
+
+It runs directly in your browser. No account is required, and grades are not sent to a server.
+
+### ✨ Features
+
+- **Live average calculation** — the result updates whenever you add or remove a grade.
+- **Three grading scales** — 5-point, 10-point, and 12-point.
+- **Grade management** — add grades, remove individual entries, or clear the list.
+- **Two interface languages** — Russian and English, selectable in Settings; the browser language is used on first launch.
+- **Light and dark themes** — choose manually, with the device theme used as the initial preference.
+- **Five accent colors** — green, blue, red, yellow, and purple.
+- **Gera the owl 🦉** — the mascot reacts to the current average.
+- **Announcement panel** — its content is loaded from `event.txt`.
+- **Responsive layout** — designed for desktop and mobile screens.
+- **Automated deployment** — GitHub Actions builds and deploys changes pushed to `main`.
+
+> **Note:** the average is a simple arithmetic mean. If your school uses weighted grades, this value may differ from the official result.
+
+### 💾 Data & Privacy
+
+- Grades are kept **only for the current session** and are not restored after a page reload.
+- No account is needed, and grades are not uploaded to a server.
+- The selected grading scale is saved in your browser's local storage.
+- In the current implementation, language, theme, and accent color are determined again on each launch.
+
+### 🚀 Run Locally
+
+**Requirement:** [Node.js](https://nodejs.org/) installed on your computer.
+
+```bash
+git clone https://github.com/German-GPD/school-calc.git
+cd school-calc
+npm install
+npm run dev
+```
+
+To test the production build:
+
+```bash
+npm run build
+npm run preview
+```
+
+### 🧰 Tech Stack
+
+| Technology | Purpose |
+| --- | --- |
+| HTML5 | Page structure |
+| CSS3 | Styling, themes, and responsive layout |
+| JavaScript (ES modules) | Application logic |
+| Vue 3 | Root component and interface mounting |
+| Vite 6 | Development server and production build |
+| GitHub Pages | App hosting |
+| GitHub Actions | Automated build and deployment |
+
+### 📂 Project Structure
+
+```text
+school-calc/
+├── .github/workflows/
+│   └── deploy.yml          # Automated deployment
+├── public/
+│   └── event.txt           # Announcement for the published app
+├── src/
+│   ├── App.vue             # Vue application component
+│   ├── main.js             # Vue entry point
+│   ├── grade-engine.js     # Average calculation
+│   └── storage.js          # Grading-scale persistence
+├── index.html              # HTML entry point
+├── script.js               # Interface logic
+├── style.css               # Styles and themes
+├── event.txt               # Local announcement file
+├── package.json            # Dependencies and scripts
+├── vite.config.js           # Vite configuration
+├── LICENSE                  # Usage terms
+└── README.md                # Project documentation
+```
+
+### 📣 Updating the Announcement
+
+To change the information panel in the published app, edit **`public/event.txt`** and push the change to the repository. The root-level `event.txt` is also provided for local development.
+
+### 📜 License & Attribution
+
+This project is licensed under **Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)**. See [LICENSE](LICENSE) and the [full license text](https://creativecommons.org/licenses/by-nc/4.0/legalcode).
+
+When sharing or adapting the project, credit the author, link to the original repository and license, and indicate any changes. Commercial use is not permitted without separate permission. Do not present the project or its parts as your own original work.
+
+### 🔗 Links & Community
+
+- 🌐 [Open SCHOOL CALC](https://german-gpd.github.io/school-calc/)
+- 💻 [GitHub Repository](https://github.com/German-GPD/school-calc)
+- 👨‍💻 [Developer Telegram — @german_gpd](https://t.me/german_gpd)
+- 🧩 [GERMAN'$ CODE TEAM — Telegram](https://t.me/g_code_team)
+- 🦊 [RedFox — Telegram channel](https://t.me/redfox_g56)
 
 ---
 
 <div align="center">
 
-**SCHOOL CALC**  
-*Made with care by German · GERMAN'$ CODE TEAM*
+**SCHOOL CALC · 2.1.0**
+
+*Designed with care. Built by German.*  
+*Сделано с заботой. Разработано German.*
+
+**GERMAN'$ CODE TEAM**
 
 </div>
