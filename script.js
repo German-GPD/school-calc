@@ -1,11 +1,16 @@
+import { calculateAverage, roundGrade } from './src/grade-engine.js';
+import { loadAppState, saveAppState } from './src/storage.js';
+
 (()=>{
 'use strict';
 const $=id=>document.getElementById(id);
-let grades=[],language=(navigator.language||'en').toLowerCase().startsWith('ru')?'ru':'en';
-let theme=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';
+const savedState=loadAppState();
+let grades=savedState?.grades??[];
+let language=savedState?.language??((navigator.language||'en').toLowerCase().startsWith('ru')?'ru':'en');
+let theme=savedState?.theme??(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');
 const accentNames=['green','blue','red','yellow','purple'];
-let accent=accentNames[Math.floor(Math.random()*accentNames.length)];
-let gradingScale=10,previousAverage=null,bestAverage=null,lastActionChanged=false;
+let accent=savedState?.accent??accentNames[Math.floor(Math.random()*accentNames.length)];
+let gradingScale=savedState?.gradingScale??10,previousAverage=null,bestAverage=null,lastActionChanged=false;
 let toastTimer;
 
 const colors={green:'#d8ff42',blue:'#8db9ff',red:'#ff9588',yellow:'#ffd96b',purple:'#c5a5ff'};
@@ -19,12 +24,13 @@ average:'AVERAGE SCORE',gradesAdded:'GRADES ADDED',scale:'PERFORMANCE SCALE',add
 function plural(n,a){let x=n%10,y=n%100;return x===1&&y!==11?a[0]:x>=2&&x<=4&&(y<12||y>14)?a[1]:a[2]}
 function t(k){return W[language][k]}
 function toast(s){$('toast').textContent=s;$('toast').classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('toast').classList.remove('show'),2100)}
-function setTheme(v){theme=v;document.body.classList.toggle('dark',v==='dark');$('lightBtn').classList.toggle('active',v==='light');$('darkBtn').classList.toggle('active',v==='dark');document.querySelector('meta[name="theme-color"]').content=v==='dark'?'#181916':'#f5f5f0'}
-function setAccent(v){accent=v;document.documentElement.style.setProperty('--accent',colors[v]);document.querySelectorAll('.color-btn').forEach(b=>b.classList.toggle('active',b.dataset.color===v))}
+function persistState(){saveAppState({grades,gradingScale,language,theme,accent})}
+function setTheme(v){theme=v;document.body.classList.toggle('dark',v==='dark');$('lightBtn').classList.toggle('active',v==='light');$('darkBtn').classList.toggle('active',v==='dark');document.querySelector('meta[name="theme-color"]').content=v==='dark'?'#181916':'#f5f5f0';persistState()}
+function setAccent(v){accent=v;document.documentElement.style.setProperty('--accent',colors[v]);document.querySelectorAll('.color-btn').forEach(b=>b.classList.toggle('active',b.dataset.color===v));persistState()}
 function updateLanguage(){
  document.documentElement.lang=language;
  document.querySelectorAll('[data-t]').forEach(el=>{let v=t(el.dataset.t);if(typeof v==='string')el.textContent=v});
- $('ruBtn').classList.toggle('active',language==='ru');$('enBtn').classList.toggle('active',language==='en');render();
+ $('ruBtn').classList.toggle('active',language==='ru');$('enBtn').classList.toggle('active',language==='en');render();persistState();
 }
 function avg(){return grades.length?grades.reduce((a,b)=>a+b,0)/grades.length:null}
 function mood(a){
@@ -37,8 +43,8 @@ function mood(a){
  if(r<0.95)return ['😌',language==='ru'?'Сильный результат.':'A strong result.',t('great'),'GERA / GREAT'];
  return ['🦉',language==='ru'?'Почти максимум!':'Near the top!',t('perfect'),'GERA / TOP'];
 }
-function avg(){return grades.length?grades.reduce((a,b)=>a+b,0)/grades.length:null}
-function roundedGrade(a){return a===null?null:Math.floor(a+0.5+Number.EPSILON)}
+function avg(){return calculateAverage(grades)}
+function roundedGrade(a){return roundGrade(a)}
 function render(){
  const n=grades.length,a=avg();
  $('average').textContent=a===null?'—':a.toFixed(2).replace(/0+$/,'').replace(/\\.$/,'');
@@ -52,8 +58,8 @@ function render(){
  else grades.forEach((g,i)=>{const chip=document.createElement('div');chip.className='grade-chip';const b=document.createElement('b');b.textContent=g;const x=document.createElement('button');x.textContent='×';x.setAttribute('aria-label',language==='ru'?'Удалить оценку':'Remove grade');x.addEventListener('click',()=>changeGrades(()=>grades.splice(i,1)));chip.append(b,x);list.append(chip)});
  
 }
-function changeGrades(change){const before=avg();change();previousAverage=before;const after=avg();lastActionChanged=before!==after;if(after!==null&&(bestAverage===null||after>bestAverage))bestAverage=after;render()}
-function setScale(value){if(value===gradingScale)return;if(grades.length&&!confirm(t('scaleConfirm')))return;gradingScale=value;grades=[];previousAverage=null;bestAverage=null;lastActionChanged=false;buildGrid();updateScaleButtons();render()}
+function changeGrades(change){const before=avg();change();previousAverage=before;const after=avg();lastActionChanged=before!==after;if(after!==null&&(bestAverage===null||after>bestAverage))bestAverage=after;persistState();render()}
+function setScale(value){if(value===gradingScale)return;if(grades.length&&!confirm(t('scaleConfirm')))return;gradingScale=value;grades=[];previousAverage=null;bestAverage=null;lastActionChanged=false;buildGrid();updateScaleButtons();persistState();render()}
 function updateScaleButtons(){[5,10,12].forEach(v=>$('scale'+v+'Btn').classList.toggle('active',gradingScale===v))}
 function buildGrid(){
  $('gradeGrid').innerHTML='';
@@ -69,7 +75,7 @@ $('lightBtn').addEventListener('click',()=>setTheme('light'));$('darkBtn').addEv
 document.querySelectorAll('.color-btn').forEach(b=>b.addEventListener('click',()=>setAccent(b.dataset.color)));
 $('ruBtn').addEventListener('click',()=>{language='ru';updateLanguage()});$('enBtn').addEventListener('click',()=>{language='en';updateLanguage()});
 $('scale5Btn').addEventListener('click',()=>setScale(5));$('scale10Btn').addEventListener('click',()=>setScale(10));$('scale12Btn').addEventListener('click',()=>setScale(12));
-$('cleanBtn').addEventListener('click',()=>{if(!grades.length){toast(language==='ru'?'Список уже пуст':'The list is already empty');return}if(confirm(t('confirm'))){grades=[];previousAverage=null;bestAverage=null;lastActionChanged=false;render()}});
+$('cleanBtn').addEventListener('click',()=>{if(!grades.length){toast(language==='ru'?'Список уже пуст':'The list is already empty');return}if(confirm(t('confirm'))){grades=[];previousAverage=null;bestAverage=null;lastActionChanged=false;persistState();render()}});
 buildGrid();setTheme(theme);setAccent(accent);updateScaleButtons();updateLanguage();render();
 fetch('./event.txt',{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error('event.txt not found');return r.text()}).then(text=>{$('eventText').textContent=text.trim()||' ';}).catch(()=>{$('eventText').textContent='Не удалось загрузить event.txt. Запусти страницу через веб-сервер.';});
 })();
