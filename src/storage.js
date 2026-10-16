@@ -25,10 +25,8 @@ function getStorage() {
 export function normalizeState(input) {
   const value = input && typeof input === 'object' ? input : {};
   const gradingScale = isValidScale(value.gradingScale) ? value.gradingScale : DEFAULT_STATE.gradingScale;
-  const grades = []; // Never restore or persist grades between sessions.
-
   return {
-    grades,
+    grades: [], // Never restore or persist grades between sessions.
     gradingScale,
     language: value.language === 'ru' || value.language === 'en' ? value.language : DEFAULT_STATE.language,
     theme: value.theme === 'dark' || value.theme === 'light' ? value.theme : DEFAULT_STATE.theme,
