@@ -86,3 +86,257 @@ body.dark {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* ---------- Additional component styles ---------- */
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-block: 1rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.brand-icon {
+  display: grid;
+  width: 2rem;
+  aspect-ratio: 1;
+  place-items: center;
+  border: 1px solid var(--text);
+  background: var(--accent);
+  box-shadow: 3px 3px 0 var(--shadow);
+  color: #20221e;
+  font: 800 0.85rem "Courier New", monospace;
+}
+
+.brand-name {
+  font-size: 0.9rem;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+}
+
+.brand-sub,
+.label,
+.tag,
+.meter-legend,
+.event-title,
+.hint,
+.history-count,
+.session-info,
+.footer {
+  font-family: "Courier New", monospace;
+}
+
+.brand-sub {
+  margin-top: 0.2rem;
+  color: var(--muted);
+  font-size: 0.65rem;
+  letter-spacing: 0.05em;
+}
+
+.hero {
+  padding-block: 1.75rem 1.25rem;
+}
+
+.score-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-block: 1.5rem;
+}
+
+.score {
+  font-size: clamp(4.5rem, 20vw, 6.75rem);
+  font-weight: 900;
+  line-height: 0.85;
+  letter-spacing: -0.07em;
+  font-variant-numeric: tabular-nums;
+}
+
+.meter {
+  display: grid;
+  grid-template-columns: repeat(20, minmax(0, 1fr));
+  gap: 3px;
+  height: 8px;
+}
+
+.meter span {
+  background: var(--line);
+}
+
+.meter span.is-active {
+  background: var(--accent);
+}
+
+.event-card,
+.advice,
+.dev-card {
+  padding: 1rem;
+  border: 1px solid var(--line);
+  background: var(--panel);
+}
+
+.event-card {
+  box-shadow: 3px 3px 0 var(--shadow);
+}
+
+.event-text {
+  overflow-wrap: anywhere;
+  white-space: pre-wrap;
+  font-size: 0.85rem;
+  line-height: 1.65;
+}
+
+.grade-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0;
+  list-style: none;
+}
+
+.grade-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 2.2rem;
+  padding-inline: 0.65rem;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  font: 0.8rem "Courier New", monospace;
+}
+
+.grade-chip button {
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.targets {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.target {
+  padding: 0.65rem;
+  border: 1px solid var(--line);
+  background: var(--bg);
+}
+
+.target-value {
+  margin-top: 0.3rem;
+  font-size: 1rem;
+  font-weight: 850;
+}
+
+button,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--text);
+  outline-offset: 3px;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.dialog {
+  width: min(100%, 28rem);
+  max-height: 90dvh;
+  overflow: auto;
+  padding: 1.25rem;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  box-shadow: 4px 4px 0 #0002;
+}
+
+.setting-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-block: 1.25rem;
+}
+
+.segment {
+  display: flex;
+  gap: 3px;
+  padding: 3px;
+  border: 1px solid var(--line);
+  background: var(--bg);
+}
+
+.segment button {
+  padding: 0.5rem 0.6rem;
+  border: 1px solid transparent;
+  background: transparent;
+  font: 0.65rem "Courier New", monospace;
+}
+
+.segment button[aria-pressed="true"] {
+  border-color: var(--text);
+  background: var(--accent);
+  color: #20221e;
+}
+
+.toast {
+  position: fixed;
+  z-index: 50;
+  inset-inline: 1rem;
+  bottom: 1rem;
+  width: fit-content;
+  max-width: calc(100% - 2rem);
+  margin-inline: auto;
+  padding: 0.75rem 1rem;
+  background: var(--text);
+  color: var(--bg);
+  font: 0.7rem "Courier New", monospace;
+  text-align: center;
+}
+
+@media (max-width: 360px) {
+  .score {
+    letter-spacing: -0.05em;
+  }
+
+  .targets {
+    gap: 0.3rem;
+  }
+
+  .target {
+    padding: 0.5rem 0.35rem;
+  }
+}
+
+@media (prefers-contrast: more) {
+  :root {
+    --muted: #55574f;
+    --line: #8b8d83;
+  }
+
+  body.dark {
+    --muted: #c5c7bd;
+    --line: #77796f;
+  }
+}
