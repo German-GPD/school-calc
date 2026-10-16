@@ -8,7 +8,7 @@
 
 [🌐 Web app](https://german-gpd.github.io/school-calc/) · [💻 Source code](https://github.com/German-GPD/school-calc) · [✉️ Developer](https://t.me/german_gpd)
 
-![Version](https://img.shields.io/badge/version-2.0.0-8db9ff)
+![Version](https://img.shields.io/badge/version-2.1.0-8db9ff)
 ![Vue](https://img.shields.io/badge/Vue-3-42b883?logo=vuedotjs&logoColor=white)
 ![Vite](https://img.shields.io/badge/Vite-7-646CFF?logo=vite&logoColor=white)
 ![Tests](https://img.shields.io/badge/tests-Node.js-339933?logo=nodedotjs&logoColor=white)
@@ -186,7 +186,7 @@ The calculation engine is in `src/grade-engine.js`; browser persistence is handl
 
 <div align="center">
 
-**SCHOOL CALC 2.0.0**  
+**SCHOOL CALC 2.1.0**  
 Created with care by **German · GERMAN'$ CODE TEAM**
 
 </div>
