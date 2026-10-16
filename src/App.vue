@@ -25,6 +25,12 @@
 
 <section class="history"><div class="section-head"><div class="label"><span class="pixel"></span><span data-t="history">ТВОИ ОЦЕНКИ</span></div><div class="history-count" id="historyCount">0 оценок</div></div><div class="grade-list" id="gradeList"></div></section>
 
+<section class="advice" aria-live="polite">
+  <div class="advice-head"><div class="advice-title">🦉 <span data-t="smartAdvice">СОВЕТ ГЕРЫ</span></div><div class="advice-tag">SMART ANALYSIS</div></div>
+  <div class="advice-text" id="adviceText">Добавь оценки — Гера поможет разобраться с результатом.</div>
+  <div class="targets" id="targets"></div>
+</section>
+
 
 
 <div class="bottom"><div class="session-info"><div>● <span data-t="session">ТЕКУЩАЯ СЕССИЯ</span></div><div data-t="notSaved">СОХРАНЯЕТСЯ НА ЭТОМ УСТРОЙСТВЕ</div></div><button class="clean-btn" id="cleanBtn">↺ CLEAN</button></div>
