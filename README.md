@@ -36,6 +36,7 @@ SCHOOL CALC — проект, созданный для удобного и бы
 
 ### 🔗 Официальные ссылки
 
+- **Личный сайт German:** https://german-gpd.github.io/about-german/
 - **Telegram-канал RedFox:** https://t.me/redfox_g56
 - **GERMAN'$ CODE TEAM — группа с темами:** https://t.me/g_code_team
 - **Разработчик — German:** https://t.me/german_gpd
@@ -66,6 +67,7 @@ Language availability may vary depending on the published version.
 
 ### 🔗 Official Links
 
+- **German's personal website:** https://german-gpd.github.io/about-german/
 - **RedFox Telegram Channel:** https://t.me/redfox_g56
 - **GERMAN'$ CODE TEAM — Telegram Topics Group:** https://t.me/g_code_team
 - **Developer — German:** https://t.me/german_gpd
@@ -146,4 +148,3 @@ The published web version runs from the single `index.html` file; the main inter
 - `reference/styles.css` — example interface styling.
 - `reference/grade-utils.js` — standalone grade calculation and summary utilities.
 - `reference/SchoolCalc.vue` — a standalone Vue grade-calculator example.
-
