@@ -28,7 +28,7 @@
 
 
 
-<div class="bottom"><div class="session-info"><div>● <span data-t="session">ТЕКУЩАЯ СЕССИЯ</span></div><div data-t="notSaved">СОХРАНЯЕТСЯ НА ЭТОМ УСТРОЙСТВЕ</div></div><button class="clean-btn" id="cleanBtn">↺ CLEAN</button></div>
+<div class="bottom"><div class="session-info"><div>● <span data-t="session">ТЕКУЩАЯ СЕССИЯ</span></div><div data-t="notSaved">ОЦЕНКИ НЕ СОХРАНЯЮТСЯ</div></div><button class="clean-btn" id="cleanBtn">↺ CLEAN</button></div>
 
 <section class="dev-card"><div class="dev-eyebrow">INDEPENDENT DEVELOPER / 01</div><div class="dev-name">GERMAN</div><div class="dev-role" data-t="devRole">Разработчик SCHOOL CALC</div><div class="dev-bottom"><a class="telegram" href="https://t.me/german_gpd" target="_blank" rel="noopener">↗ TELEGRAM @german_gpd</a><div class="dev-sign">MADE WITH CARE<br>GERMAN'$ CODE TEAM</div></div></section>
 <footer class="footer"><span>SCHOOL CALC / v2.1.0</span><span>GERMAN'$ CODE TEAM ♥</span></footer>
