@@ -1,11 +1,8 @@
-# Тяжелый .apk файл превращаем во Vue (он даст огромную зеленую полосу веб-кода)
 *.apk linguist-language=Vue
 *.apk linguist-detectable=true
 
-# Твой index.html превращаем в Kotlin (он весит мало, поэтому Kotlin будет «чуть-чуть»)
 index.html linguist-language=Kotlin
 index.html linguist-detectable=true
 
-# Сам файл настроек пусть отображается как HTML (тоже даст маленькую каплю)
 .gitattributes linguist-language=HTML
 .gitattributes linguist-detectable=true
