@@ -1,4 +1,4 @@
-import { calculateAverage, roundGrade, calculateTargetPlan } from './src/grade-engine.js';
+import { calculateAverage, calculateTargetPlan } from './src/grade-engine.js';
 import { loadAppState, saveAppState } from './src/storage.js';
 
 (()=>{
@@ -43,7 +43,6 @@ function mood(a){
  return ['🦉',language==='ru'?'Почти максимум!':'Near the top!',t('perfect'),'GERA / TOP'];
 }
 function avg(){return calculateAverage(grades)}
-function roundedGrade(a){return roundGrade(a)}
 function render(){
  const n=grades.length,a=avg();
  $('average').textContent=a===null?'—':a.toFixed(2).replace(/0+$/,'').replace(/\\.$/,'');
@@ -69,6 +68,7 @@ function render(){
      const plan=calculateTargetPlan(grades,goal,gradingScale);
      if(plan.status==='one-grade'){value.textContent=String(plan.nextGradeNeeded);note.textContent=language==='ru'?'Следующая оценка':'Next grade'}
      else if(plan.status==='multiple-grades'){value.textContent=String(plan.gradesNeeded);note.textContent=language==='ru'?'Оценок по максимуму':'Max grades needed'}
+     else if(plan.status==='unreachable'){value.textContent='∞';note.textContent=language==='ru'?'Недостижима с текущими оценками':'Unreachable with current grades'}
      else{value.textContent='✓';note.textContent=language==='ru'?'Цель достигнута':'Goal reached'}
     }catch{value.textContent='—';note.textContent=language==='ru'?'Нет расчёта':'Unavailable'}
    }
