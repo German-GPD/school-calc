@@ -50,7 +50,7 @@ function setScale(value){if(value===gradingScale)return;if(grades.length&&!confi
 function updateScaleButtons(){[5,10,12].forEach(v=>$('scale'+v+'Btn').classList.toggle('active',gradingScale===v))}
 function buildGrid(){
  $('gradeGrid').innerHTML='';
- for(let n=0;n<=gradingScale;n++){const b=document.createElement('button');b.className='grade-btn';const small=document.createElement('small');small.textContent=n===gradingScale?'MAX':n===0?'MIN':'·';b.append(document.createTextNode(String(n)),small);b.setAttribute('aria-label',(language==='ru'?'Добавить оценку ':'Add grade ')+n);b.addEventListener('click',()=>{changeGrades(()=>grades.push(n));});$('gradeGrid').append(b)}
+ for(let n=0;n<=gradingScale;n++){const b=document.createElement('button');b.className='grade-btn';const small=document.createElement('small');small.textContent=n===gradingScale?'MAX':n===0?'MIN':'·';b.append(document.createTextNode(String(n)),small);b.setAttribute('aria-label',(language==='ru'?'Добавить оценку ':'Add grade ')+n);b.addEventListener('click',()=>{changeGrades(()=>grades.push(n));$('owlAvatar').classList.remove('bounce');void $('owlAvatar').offsetWidth;$('owlAvatar').classList.add('bounce')});$('gradeGrid').append(b)}
 }
 function open(id){$(id).classList.add('open')}
 function close(id){$(id).classList.remove('open')}
