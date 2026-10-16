@@ -38,14 +38,14 @@ export function normalizeState(input) {
 
 export function loadAppState() {
   const storage = getStorage();
-  if (!storage) return { ...DEFAULT_STATE, grades: [] };
+  if (!storage) return null;
 
   try {
     const raw = storage.getItem(STORAGE_KEY);
-    if (!raw) return { ...DEFAULT_STATE, grades: [] };
+    if (!raw) return null;
     return normalizeState(JSON.parse(raw));
   } catch {
-    return { ...DEFAULT_STATE, grades: [] };
+    return null;
   }
 }
 
