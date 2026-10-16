@@ -189,3 +189,46 @@ export function describeProgress(summary) {
 
   return "Начни с небольших целей и постепенно улучшай результат.";
 }
+
+/**
+ * Return the most frequently occurring grade.
+ * If multiple grades tie, the highest one is returned.
+ * @param {number[]} grades
+ * @returns {number|null}
+ */
+export function mostCommonGrade(grades) {
+  const distribution = gradeDistribution(grades);
+  let bestGrade = null;
+  let bestCount = 0;
+
+  for (const [gradeText, count] of Object.entries(distribution)) {
+    const grade = Number(gradeText);
+    if (count > bestCount || (count === bestCount && grade > bestGrade)) {
+      bestGrade = grade;
+      bestCount = count;
+    }
+  }
+
+  return bestCount > 0 ? bestGrade : null;
+}
+
+/**
+ * Split grades into three simple performance groups.
+ * @param {number[]} grades
+ * @returns {{low: number, middle: number, high: number}}
+ */
+export function performanceGroups(grades) {
+  return grades.reduce(
+    (groups, value) => {
+      const grade = normalizeGrade(value);
+      if (grade === null) return groups;
+
+      if (grade <= 4) groups.low += 1;
+      else if (grade <= 7) groups.middle += 1;
+      else groups.high += 1;
+
+      return groups;
+    },
+    { low: 0, middle: 0, high: 0 }
+  );
+}
