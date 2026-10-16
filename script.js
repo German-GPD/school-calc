@@ -71,6 +71,7 @@ $('settingsOpen').addEventListener('click',()=>open('settingsBackdrop'));$('sett
 ['settingsBackdrop'].forEach(id=>$(id).addEventListener('click',e=>{if(e.target===$(id))close(id)}));
 document.addEventListener('keydown',e=>{if(e.key==='Escape')close('settingsBackdrop')});
 $('lightBtn').addEventListener('click',()=>setTheme('light'));$('darkBtn').addEventListener('click',()=>setTheme('dark'));
+if(systemTheme?.addEventListener)systemTheme.addEventListener('change',e=>setTheme(e.matches?'dark':'light'));
 document.querySelectorAll('.color-btn').forEach(b=>b.addEventListener('click',()=>setAccent(b.dataset.color)));
 $('ruBtn').addEventListener('click',()=>{language='ru';updateLanguage()});$('enBtn').addEventListener('click',()=>{language='en';updateLanguage()});
 $('scale5Btn').addEventListener('click',()=>setScale(5));$('scale10Btn').addEventListener('click',()=>setScale(10));$('scale12Btn').addEventListener('click',()=>setScale(12));
