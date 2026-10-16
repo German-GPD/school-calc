@@ -22,11 +22,14 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Prepare static site
-        run: |
-          mkdir dist
-          cp index.html style.css script.js event.txt dist/
-          cp -r src dist/src
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install dependencies
+        run: npm install
+      - name: Build Vue application
+        run: npm run build
       - name: Configure Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
