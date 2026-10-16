@@ -126,3 +126,24 @@ This project is licensed under **CC BY-NC 4.0** — [creativecommons.org/license
 
 *Создано с помощью кода. Развивается с амбициями.*  
 *Built with code, developed with ambition.*
+
+---
+
+## 🧩 Исходники и статистика языков / Source references & language statistics
+
+### 🇷🇺 Русский
+
+Опубликованная веб-версия запускается из единственного файла `index.html`; CSS и JavaScript основного интерфейса находятся внутри него. Папка `reference/` содержит отдельные примеры CSS, JavaScript и Vue для удобного чтения и демонстрации технологий. Эти справочные файлы **не подключены** к работающей веб-версии и не меняют её внешний вид или поведение.
+
+- `reference/styles.css` — пример оформления интерфейса.
+- `reference/grade-utils.js` — отдельные функции для расчёта и сводки оценок.
+- `reference/SchoolCalc.vue` — самостоятельный Vue-пример калькулятора оценок.
+
+### 🇬🇧 English
+
+The published web version runs from the single `index.html` file; the main interface's CSS and JavaScript are embedded in it. The `reference/` directory contains separate CSS, JavaScript, and Vue examples to make the technologies easier to explore. These reference files are **not imported** by the live web version and do not change its appearance or behavior.
+
+- `reference/styles.css` — example interface styling.
+- `reference/grade-utils.js` — standalone grade calculation and summary utilities.
+- `reference/SchoolCalc.vue` — a standalone Vue grade-calculator example.
+
