@@ -6,14 +6,15 @@ import { loadAppState, saveAppState } from './src/storage.js';
 const $=id=>document.getElementById(id);
 const savedState=loadAppState();
 let grades=savedState?.grades??[];
-let language=savedState?.language??((navigator.language||'en').toLowerCase().startsWith('ru')?'ru':'en');
-let theme=savedState?.theme??(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');
+let language=((navigator.language||'en').toLowerCase().startsWith('ru')?'ru':'en');
+const systemTheme=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)');
+let theme=systemTheme?.matches?'dark':'light';
 const accentNames=['green','blue','red','yellow','purple'];
-let accent=savedState?.accent??accentNames[Math.floor(Math.random()*accentNames.length)];
+let accent=accentNames[Math.floor(Math.random()*accentNames.length)];
 let gradingScale=savedState?.gradingScale??10;
 let toastTimer;
 
-const colors={green:'#d8ff42',blue:'#8db9ff',red:'#ff9588',yelpurple:'#c5a5ff'};
+const colors={green:'#d8ff42',blue:'#8db9ff',red:'#ff9588',yellow:'#ffd96b',purple:'#c5a5ff'};
 const W={
 ru:{
 average:'СРЕДНИЙ БАЛЛ',gradesAdded:'ОЦЕНОК ВНЕСЕНО',scale:'ШКАЛА УСПЕВАЕМОСТИ',addGrade:'ДОБАВИТЬ ОЦЕНКУ',history:'ТВОИ ОЦЕНКИ',session:'ТЕКУЩАЯ СЕССИЯ',notSaved:'ОЦЕНКИ НЕ СОХРАНЯЮТСЯ',settings:'Настройки',appearance:'Оформление',appearanceDesc:'Тема приложения',light:'СВЕТ',dark:'ТЬМА',accent:'Акцентный цвет',accentDesc:'Выбери свой цвет',language:'Язык',languageDesc:'Язык интерфейса',empty:'ПОКА НЕТ ОЦЕНОК — ДОБАВЬ ПЕРВУЮ',clean:'↺ CLEAN',devRole:'Разработчик SCHOOL CALC',confirm:'Удалить все оценки?',gradingSystem:'Система оценивания',gradingSystemDesc:'При смене шкалы оценки очищаются',scaleConfirm:'Сменить шкалу? Все текущие оценки будут удалены.',count:n=>`${n} ${plural(n,['оценка','оценки','оценок'])}`
@@ -24,13 +25,13 @@ average:'AVERAGE SCORE',gradesAdded:'GRADES ADDED',scale:'PERFORMANCE SCALE',add
 function plural(n,a){let x=n%10,y=n%100;return x===1&&y!==11?a[0]:x>=2&&x<=4&&(y<12||y>14)?a[1]:a[2]}
 function t(k){return W[language][k]}
 function toast(s){$('toast').textContent=s;$('toast').classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('toast').classList.remove('show'),2100)}
-function persistState(){saveAppState({gradingScale,language,theme,accent})}
-function setTheme(v){theme=v;document.body.classList.toggle('dark',v==='dark');$('lightBtn').classList.toggle('active',v==='light');$('darkBtn').classList.toggle('active',v==='dark');document.querySelector('meta[name="theme-color"]').content=v==='dark'?'#181916':'#f5f5f0';persistState()}
-function setAccent(v){accent=v;document.documentElement.style.setProperty('--accent',colors[v]);document.querySelectorAll('.color-btn').forEach(b=>b.classList.toggle('active',b.dataset.color===v));persistState()}
+function persistState(){saveAppState({gradingScale})}
+function setTheme(v){theme=v;document.body.classList.toggle('dark',v==='dark');$('lightBtn').classList.toggle('active',v==='light');$('darkBtn').classList.toggle('active',v==='dark');document.querySelector('meta[name="theme-color"]').content=v==='dark'?'#181916':'#f5f5f0'}
+function setAccent(v){accent=v;document.documentElement.style.setProperty('--accent',colors[v]);document.querySelectorAll('.color-btn').forEach(b=>b.classList.toggle('active',b.dataset.color===v))}
 function updateLanguage(){
  document.documentElement.lang=language;
  document.querySelectorAll('[data-t]').forEach(el=>{let v=t(el.dataset.t);if(typeof v==='string')el.textContent=v});
- $('ruBtn').classList.toggle('active',language==='ru');$('enBtn').classList.toggle('active',language==='en');render();persistState();
+ $('ruBtn').classList.toggle('active',language==='ru');$('enBtn').classList.toggle('active',language==='en');render();
 }
 function mood(a){
  if(a===null)return ['🦉',language==='ru'?'Привет, я Гера.':'Hi, I’m Gera.','GERA / READY'];
