@@ -28,9 +28,9 @@ export function normalizeState(input) {
   return {
     grades: [], // Never restore or persist grades between sessions.
     gradingScale,
-    language: value.language === 'ru' || value.language === 'en' ? value.language : DEFAULT_STATE.language,
-    theme: value.theme === 'dark' || value.theme === 'light' ? value.theme : DEFAULT_STATE.theme,
-    accent: ['green', 'blue', 'red', 'yellow', 'purple'].includes(value.accent) ? value.accent : DEFAULT_STATE.accent,
+    language: DEFAULT_STATE.language,
+    theme: DEFAULT_STATE.theme,
+    accent: DEFAULT_STATE.accent,
   };
 }
 
@@ -52,7 +52,7 @@ export function saveAppState(state) {
   if (!storage) return false;
 
   try {
-    storage.setItem(STORAGE_KEY, JSON.stringify(normalizeState(state)));
+    storage.setItem(STORAGE_KEY, JSON.stringify({ gradingScale: normalizeState(state).gradingScale }));
     return true;
   } catch {
     return false;
