@@ -2,147 +2,208 @@
 
 # 🧮 SCHOOL CALC
 
-**Современный калькулятор школьных оценок от GERMAN'$ CODE TEAM**
+### Твой школьный калькулятор оценок
 
-`v2.x.x` · 🇷🇺 Русский · 🇬🇧 English
+**Разработка German · GERMAN'$ CODE TEAM**
+
+[🌐 Открыть веб-версию](https://german-gpd.github.io/school-calc/) · [💬 Связаться с разработчиком](https://t.me/german_gpd) · [📣 Telegram RedFox](https://t.me/redfox_g56)
+
+![Version](https://img.shields.io/badge/version-2.0-blue)
+![Vue](https://img.shields.io/badge/Vue.js-3-42b883?logo=vuedotjs&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-7-646CFF?logo=vite&logoColor=white)
+![Languages](https://img.shields.io/badge/languages-RU%20%7C%20EN-8A2BE2)
+
+*Считай оценки. Планируй цель. Учись с умом.*
 
 </div>
 
 ---
 
-## 📖 Описание (RU)
+## 🇷🇺 О проекте
 
-SCHOOL CALC — проект, созданный для удобного и быстрого расчёта школьных оценок. Разработка ведётся сразу по двум направлениям: приложение для Android (`.apk`) и веб-версия (`.html`).
+**SCHOOL CALC** — калькулятор школьных оценок, созданный German в рамках **GERMAN'$ CODE TEAM**. Он помогает быстро разобраться со средним баллом, оценить текущие результаты и понять, какие оценки могут понадобиться для достижения желаемого среднего.
 
-### 🚀 Версии проекта
+Проект развивается в нескольких форматах: веб-версия для браузера и приложение для Android. Публично выкладываются отобранные сборки — не каждая промежуточная версия разработки обязательно публикуется.
 
-- **Android (`.apk`)** — приложение для устройств на Android.
-- **Web (`.html`)** — версия для браузера, которую можно открыть как HTML-файл.
+### ✨ Возможности
 
-Обе версии относятся к одному проекту, однако их интерфейс и возможности могут отличаться.
+- **Расчёт среднего балла** по введённым оценкам.
+- **Планирование цели:** расчёт того, какие будущие оценки могут помочь достичь нужного среднего.
+- **Разные шкалы оценивания:** поддержка шкал на 5, 10 и 12 баллов в соответствующих версиях.
+- **Подсказки по результату:** рекомендации и пояснения в зависимости от текущего среднего и выбранной цели.
+- **Округление результата** для более понятного отображения.
+- **Русский и английский языки** — доступность зависит от конкретной сборки.
+- **Светлая и тёмная темы**, а также цветовые настройки в версиях, где они поддерживаются.
+- **Маскот Гера** — узнаваемый помощник SCHOOL CALC.
+- **Интерфейс для мобильных устройств** и Android.
 
-### 📦 Релизы и файлы
+> Набор функций может различаться между APK, веб-версией и отдельными релизами. Ориентируйся на описание конкретной опубликованной сборки.
 
-В репозитории публикуются выбранные версии SCHOOL CALC в форматах APK и HTML.
+### 🧠 Как пользоваться
 
-Не каждая промежуточная сборка попадает в репозиторий. Версии, которых здесь нет, не считаются важными для публичного распространения.
+1. Открой веб-версию или запусти приложение.
+2. Добавь свои оценки в калькулятор.
+3. Посмотри рассчитанный средний балл.
+4. Если доступен расчёт цели, укажи желаемый результат и изучи подсказку.
+5. Используй расчёт как ориентир для планирования учёбы.
 
-### 🌐 Языки
+**Важно:** расчёт — математическая оценка по введённым данным. Реальный итог может зависеть от правил учителя, веса контрольных работ и школьной системы оценивания.
 
-- 🇷🇺 Русский
-- 🇬🇧 Английский
+### 📥 Где найти SCHOOL CALC
 
-Наличие языков может зависеть от конкретной опубликованной версии.
+- **Веб-версия:** [german-gpd.github.io/school-calc](https://german-gpd.github.io/school-calc/)
+- **Исходный код и опубликованные файлы:** [GitHub-репозиторий](https://github.com/German-GPD/school-calc)
+- **APK для Android:** смотри доступные файлы и релизы в репозитории.
+- **HTML-сборки:** смотри опубликованные HTML-файлы в репозитории.
 
-### 🔗 Официальные ссылки
+В репозитории размещаются только выбранные публичные версии. Отсутствие конкретной промежуточной сборки означает, что она не опубликована здесь как отдельный релиз.
 
-- **Telegram-канал RedFox:** https://t.me/redfox_g56
-- **GERMAN'$ CODE TEAM — группа с темами:** https://t.me/g_code_team
-- **Разработчик — German:** https://t.me/german_gpd
+### 🔐 Данные и приватность
 
----
+SCHOOL CALC предназначен для расчётов оценок. В текущей логике введённые оценки используются для расчёта и не должны сохраняться в отдельной истории оценок. Не вводи в приложение пароли, личные документы или другие чувствительные данные.
 
-## 📖 Description (EN)
+Это описание относится к логике самого проекта; если в будущем появятся новые функции или внешние интеграции, информацию о данных следует обновить.
 
-SCHOOL CALC is a project designed to make calculating school grades easier, faster, and more convenient. It is developed in two directions: an Android application (`.apk`) and a web version (`.html`).
+### 🧑‍💻 Технологии
 
-### 🚀 Project Versions
+Веб-часть проекта использует:
 
-- **Android (`.apk`)** — application for Android devices.
-- **Web (`.html`)** — browser-based version, can be opened as an HTML file.
+- **Vue 3** — основа интерфейса.
+- **Vite** — локальный сервер разработки и сборка.
+- **HTML, CSS и JavaScript** — разметка, оформление и логика.
+- **GitHub Pages** — публикация веб-версии.
 
-Both versions belong to the same project, but their features and interfaces may differ.
+Структура веб-приложения:
 
-### 📦 Releases & Files
-
-This repository contains selected published versions of SCHOOL CALC in APK and HTML formats. Not every development build is published here.
-
-### 🌐 Languages
-
-- 🇬🇧 English
-- 🇷🇺 Russian
-
-Language availability may vary depending on the published version.
-
-### 🔗 Official Links
-
-- **RedFox Telegram Channel:** https://t.me/redfox_g56
-- **GERMAN'$ CODE TEAM — Telegram Topics Group:** https://t.me/g_code_team
-- **Developer — German:** https://t.me/german_gpd
-
----
-
-## ⚠️ ПРЕДУПРЕЖДЕНИЕ / WARNING
-
-> ### 🇷🇺 Внимание!
->
-> **Авторство проекта SCHOOL CALC принадлежит German (GERMAN'$ CODE TEAM).**
->
-> ❌ **ЗАПРЕЩЕНО:**
-> - Копировать код, дизайн или любую часть проекта и **выдавать за своё**
-> - Удалять или изменять указание авторства
-> - Использовать проект в коммерческих целях
-> - Распространять приложение **не по официальным ссылкам** (см. выше)
-> - Публиковать SCHOOL CALC под своим именем или брендом
->
-> ⚠️ **Официальные источники распространения — только ссылки из этого репозитория и Telegram-каналов, указанных выше.** Файлы SCHOOL CALC, скачанные из любых других мест, могут быть изменены и потенциально небезопасны. Мы не несём ответственности за копии, распространяемые третьими лицами.
->
-> 🔨 **Нарушители будут найдены. Копии будут сняты по жалобе DMCA. Мы отслеживаем нарушения.**
-
-> ### 🇬🇧 Attention!
->
-> **SCHOOL CALC is the intellectual property of German (GERMAN'$ CODE TEAM).**
->
-> ❌ **PROHIBITED:**
-> - Copying the code, design, or any part of the project and **claiming it as your own**
-> - Removing or altering attribution
-> - Using the project for commercial purposes
-> - Distributing the application **outside official links** (see above)
-> - Publishing SCHOOL CALC under your own name or brand
->
-> ⚠️ **The only official distribution sources are the links in this repository and the Telegram channels listed above.** Copies of SCHOOL CALC downloaded from anywhere else may be modified and potentially unsafe. We are not responsible for copies distributed by third parties.
->
-> 🔨 **Violators will be tracked down. Copies will be removed via DMCA takedown. We monitor violations.**
+| Файл | Назначение |
+| --- | --- |
+| `index.html` | HTML-точка входа приложения |
+| `src/App.vue` | Vue-компонент интерфейса |
+| `src/main.js` | запуск Vue-приложения |
+| `style.css` | стили |
+| `script.js` | логика калькулятора, перенесённая из исходной версии |
+| `vite.config.js` | настройки сборки Vite |
+| `event.txt` | текст информационного блока, если он используется опубликованной сборкой |
 
 ---
 
-## 📄 Лицензия / License
+## 🛠️ Запуск для разработчиков
 
-© 2026 German (GERMAN'$ CODE TEAM)
+### Требования
 
-Проект распространяется по лицензии **CC BY-NC 4.0** — [creativecommons.org/licenses/by-nc/4.0](https://creativecommons.org/licenses/by-nc/4.0/)
+- [Node.js](https://nodejs.org/) с npm.
+- Git — если репозиторий клонируется через командную строку.
 
-This project is licensed under **CC BY-NC 4.0** — [creativecommons.org/licenses/by-nc/4.0](https://creativecommons.org/licenses/by-nc/4.0/)
-
----
-
-## 👨‍💻 Автор и команда / Author & Team
-
-**Разработчик / Developer:** German  
-**Команда / Team:** GERMAN'$ CODE TEAM  
-**Проект / Project:** SCHOOL CALC
-
----
-
-*Создано с помощью кода. Развивается с амбициями.*  
-*Built with code, developed with ambition.*
-
-## 🛠️ Веб-разработка (Vue 3 + Vite)
-
-Веб-версия собирается через Vue 3 и Vite. Интерфейс находится в `src/App.vue`, стили — в `style.css`, а существующая логика оценок пока сохранена в `script.js`, чтобы не менять поведение приложения при переносе.
-
-### Запуск локально
+### Установка
 
 ```bash
+git clone https://github.com/German-GPD/school-calc.git
+cd school-calc
 npm install
+```
+
+### Локальный запуск
+
+```bash
 npm run dev
 ```
 
-### Сборка
+Vite покажет локальный адрес в терминале. Открой его в браузере.
+
+### Проверка production-сборки
 
 ```bash
 npm run build
 npm run preview
 ```
 
-GitHub Actions собирает сайт и публикует `dist/` в GitHub Pages при push в `main`. Для включения автоматической публикации выберите **Settings → Pages → Build and deployment → Source → GitHub Actions**.
+После успешной сборки готовые файлы появятся в каталоге `dist/`.
+
+### Публикация
+
+Проект настроен для сборки через GitHub Actions. Для публикации через GitHub Pages проверь в настройках репозитория:
+
+**Settings → Pages → Build and deployment → Source → GitHub Actions**
+
+Рабочий процесс развёртывания находится в `.github/workflows/deploy.yml`. Перед публикацией проверь статус последнего запуска в разделе **Actions**.
+
+---
+
+## 🌍 English
+
+**SCHOOL CALC** is a school-grade calculator created by German as part of **GERMAN'$ CODE TEAM**. It helps users calculate an average grade and, where supported, estimate what future grades may be needed to reach a target average.
+
+### Features
+
+- Average-grade calculations.
+- Target-average planning in supported builds.
+- 5-, 10-, and 12-point grading scales in compatible versions.
+- Contextual tips and rounded results.
+- Russian and English interfaces in supported versions.
+- Light/dark themes and accent customization where available.
+- The Gera mascot.
+- Web and Android versions.
+
+Features may differ between APK, HTML, and individual releases. The calculation is an estimate and may not reflect teacher-specific rules or weighted assignments.
+
+### Links
+
+- **Web app:** [Open SCHOOL CALC](https://german-gpd.github.io/school-calc/)
+- **Repository:** [German-GPD/school-calc](https://github.com/German-GPD/school-calc)
+- **Developer:** [German on Telegram](https://t.me/german_gpd)
+- **RedFox Telegram channel:** [redfox_g56](https://t.me/redfox_g56)
+- **GERMAN'$ CODE TEAM Telegram group:** [g_code_team](https://t.me/g_code_team)
+
+### Development
+
+Install dependencies and start the local development server:
+
+```bash
+npm install
+npm run dev
+```
+
+Create and preview a production build:
+
+```bash
+npm run build
+npm run preview
+```
+
+The web application uses Vue 3 and Vite. GitHub Actions is configured for GitHub Pages deployment.
+
+---
+
+## 🔗 Сообщество / Community
+
+- 📣 **RedFox:** https://t.me/redfox_g56
+- 👥 **GERMAN'$ CODE TEAM:** https://t.me/g_code_team
+- 👨‍💻 **German — разработчик:** https://t.me/german_gpd
+
+Идеи, предложения и сообщения об ошибках можно отправлять разработчику через Telegram.
+
+---
+
+## 📄 Авторство и лицензия / Credits & License
+
+**Автор проекта:** German  
+**Команда:** GERMAN'$ CODE TEAM  
+**Проект:** SCHOOL CALC  
+**Copyright:** © 2026 German
+
+Проект распространяется по лицензии **Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)**:  
+https://creativecommons.org/licenses/by-nc/4.0/
+
+Лицензия требует указывать авторство и не разрешает коммерческое использование без отдельного разрешения правообладателя. Перед повторным распространением или адаптацией ознакомься с полным текстом лицензии. Не выдавай работу автора за свою и не удаляй существующие уведомления об авторстве.
+
+The project is distributed under **CC BY-NC 4.0**. Attribution is required, and commercial use is not permitted under this license without separate permission. Read the full license before redistributing or adapting the project. Do not claim the original work as your own or remove existing attribution notices.
+
+---
+
+<div align="center">
+
+**SCHOOL CALC — меньше догадок, больше понимания.**
+
+*Built with code. Developed with ambition.*
+
+</div>
