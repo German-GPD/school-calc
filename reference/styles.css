@@ -1,0 +1,88 @@
+/*
+ * SCHOOL CALC — CSS reference
+ * The published web app remains self-contained in ../index.html.
+ * This file is a readable reference for the design system, not loaded by index.html.
+ */
+:root {
+  --bg: #f5f5f0;
+  --panel: #fffefa;
+  --text: #22241f;
+  --muted: #85877e;
+  --line: #dedfd6;
+  --accent: #8db9ff;
+  --shadow: #22241f;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  transition: background 0.2s, color 0.2s;
+}
+
+body.dark {
+  --bg: #181916;
+  --panel: #22231f;
+  --text: #f0f0e9;
+  --muted: #96988d;
+  --line: #393b33;
+  --shadow: #000;
+  color-scheme: dark;
+}
+
+.app {
+  width: min(100%, 620px);
+  margin-inline: auto;
+  padding: 20px 19px 28px;
+}
+
+.grade-grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 7px;
+}
+
+.grade-btn {
+  min-width: 0;
+  min-height: 57px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: var(--panel);
+  color: inherit;
+  font: 20px "Courier New", monospace;
+  cursor: pointer;
+}
+
+.grade-btn:focus-visible {
+  outline: 2px solid var(--text);
+  outline-offset: 3px;
+}
+
+@media (min-width: 560px) {
+  .app {
+    padding-top: 30px;
+  }
+
+  .grade-grid {
+    grid-template-columns: repeat(11, minmax(0, 1fr));
+  }
+
+  .grade-btn {
+    min-height: 63px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
