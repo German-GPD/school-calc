@@ -46,5 +46,17 @@
 </template>
 
 <script setup>
-// Keep the original markup and IDs so the existing grade logic and styling remain compatible.
+import { onMounted } from 'vue';
+
+// Mount the existing grade controller only after Vue has rendered the template.
+// Keeping the current DOM IDs preserves the established interactions and styling.
+onMounted(async () => {
+  try {
+    await import('../script.js');
+  } catch (error) {
+    console.error('SCHOOL CALC failed to initialize:', error);
+    const eventText = document.getElementById('eventText');
+    if (eventText) eventText.textContent = 'Не удалось запустить приложение. Обнови страницу и попробуй ещё раз.';
+  }
+});
 </script>
