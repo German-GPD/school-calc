@@ -16,7 +16,6 @@
  <div class="meter" id="meter"></div><div class="meter-legend"><span id="meterMin">0.00</span><span data-t="scale">ШКАЛА УСПЕВАЕМОСТИ</span><span id="meterMax">10.00</span></div>
 </section>
 
-<section class="owl-card"><div class="owl-avatar" id="owlAvatar">🦉</div><div><div class="owl-status" id="owlStatus">GERA / READY</div><div class="owl-title" id="owlTitle">Привет, я Гера.</div><div class="owl-message" id="owlMessage">Добавь оценки — я помогу разобраться с результатом.</div></div></section>
 
 <section class="event-card" id="eventCard"><div class="event-head"><div class="event-title">EVENT / ОБЪЯВЛЕНИЕ</div><div class="event-tag">INFO</div></div><div class="event-text" id="eventText">Загрузка объявления…</div></section>
 
