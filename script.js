@@ -32,16 +32,6 @@ function updateLanguage(){
  document.querySelectorAll('[data-t]').forEach(el=>{let v=t(el.dataset.t);if(typeof v==='string')el.textContent=v});
  $('ruBtn').classList.toggle('active',language==='ru');$('enBtn').classList.toggle('active',language==='en');render();persistState();
 }
-function mood(a){
- if(a===null)return ['🦉',language==='ru'?'Привет, я Гера.':'Hi, I’m Gera.',language==='ru'?'Добавь оценки — я оценю результат.':'Add grades and I’ll assess the result.','GERA / READY'];
- const r=a/gradingScale;
- if(r<0.01)return ['🫥',language==='ru'?'Пока ноль.':'Zero so far.',t('zero'),'GERA / LOW'];
- if(r<0.4)return ['😟',language==='ru'?'Результат слабый.':'A weak result.',t('low'),'GERA / LOW'];
- if(r<0.6)return ['😐',language==='ru'?'Пока середина.':'Around the middle.',t('mid'),'GERA / FAIR'];
- if(r<0.8)return ['🙂',language==='ru'?'Хороший результат.':'A good result.',t('good'),'GERA / GOOD'];
- if(r<0.95)return ['😌',language==='ru'?'Сильный результат.':'A strong result.',t('great'),'GERA / GREAT'];
- return ['🦉',language==='ru'?'Почти максимум!':'Near the top!',t('perfect'),'GERA / TOP'];
-}
 function avg(){return calculateAverage(grades)}
 function render(){
  const n=grades.length,a=avg();
@@ -50,7 +40,6 @@ function render(){
  $('outOf').textContent='/ '+gradingScale;$('scaleTag').textContent='0—'+gradingScale+' / '+(language==='ru'?'BY':'SCALE');
  $('gradeRange').textContent='[ 0—'+gradingScale+' ]';$('meterMin').textContent='0.00';$('meterMax').textContent=gradingScale.toFixed(2);
  $('meter').innerHTML='';for(let i=0;i<20;i++){const span=document.createElement('span');if(a!==null&&i<Math.round(a/gradingScale*20))span.className='on';$('meter').append(span)}
- const m=mood(a);$('owlAvatar').textContent=m[0];$('owlTitle').textContent=m[1];$('owlMessage').textContent=m[2];$('owlStatus').textContent=m[3];
  const list=$('gradeList');list.innerHTML='';
  if(!n){const e=document.createElement('div');e.className='empty';e.textContent=t('empty');list.append(e)}
  else grades.forEach((g,i)=>{const chip=document.createElement('div');chip.className='grade-chip';const b=document.createElement('b');b.textContent=g;const x=document.createElement('button');x.textContent='×';x.setAttribute('aria-label',language==='ru'?'Удалить оценку':'Remove grade');x.addEventListener('click',()=>changeGrades(()=>grades.splice(i,1)));chip.append(b,x);list.append(chip)});
