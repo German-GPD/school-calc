@@ -9,7 +9,7 @@ let grades=savedState?.grades??[];
 let language=savedState?.language??((navigator.language||'en').toLowerCase().startsWith('ru')?'ru':'en');
 let theme=savedState?.theme??(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');
 const accentNames=['green','blue','red','yellow','purple'];
-let accent=savedState?.accent??accentNames[Math.floor(Math.random()*accentNames.length)];
+let accent=accentNames[Math.floor(Math.random()*accentNames.length)];
 let gradingScale=savedState?.gradingScale??10;
 let toastTimer;
 
