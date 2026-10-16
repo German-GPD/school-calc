@@ -8,8 +8,7 @@ const savedState=loadAppState();
 let grades=savedState?.grades??[];
 let language=savedState?.language??((navigator.language||'en').toLowerCase().startsWith('ru')?'ru':'en');
 let theme=savedState?.theme??(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');
-const accentNames=['green','blue','red','yellow','purple'];
-let accent=savedState?.accent??accentNames[Math.floor(Math.random()*accentNames.length)];
+let accent=savedState?.accent??'green';
 let gradingScale=savedState?.gradingScale??10;
 let toastTimer;
 
@@ -45,7 +44,7 @@ function mood(a){
 function avg(){return calculateAverage(grades)}
 function render(){
  const n=grades.length,a=avg();
- $('average').textContent=a===null?'—':a.toFixed(2).replace(/0+$/,'').replace(/\\.$/,'');
+ $('average').textContent=a===null?'—':a.toFixed(2).replace(/0+$/,'').replace(/\.$/,'');
  $('gradeCount').textContent=String(n).padStart(2,'0');$('historyCount').textContent=t('count')(n);
  $('outOf').textContent='/ '+gradingScale;$('scaleTag').textContent='0—'+gradingScale+' / '+(language==='ru'?'BY':'SCALE');
  $('gradeRange').textContent='[ 0—'+gradingScale+' ]';$('meterMin').textContent='0.00';$('meterMax').textContent=gradingScale.toFixed(2);
