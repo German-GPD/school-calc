@@ -26,12 +26,13 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 22
-      - name: Install dependencies
-        run: npm install
       - name: Test calculation engine
         run: npm test
-      - name: Build site
-        run: npm run build
+      - name: Prepare static site
+        run: |
+          mkdir dist
+          cp index.html style.css script.js event.txt dist/
+          cp -r src dist/src
       - name: Configure Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
