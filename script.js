@@ -1,4 +1,4 @@
-import { calculateAverage, roundGrade } from './src/grade-engine.js';
+import { calculateAverage, roundGrade, calculateTargetPlan } from './src/grade-engine.js';
 import { loadAppState, saveAppState } from './src/storage.js';
 
 (()=>{
@@ -10,7 +10,7 @@ let language=savedState?.language??((navigator.language||'en').toLowerCase().sta
 let theme=savedState?.theme??(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');
 const accentNames=['green','blue','red','yellow','purple'];
 let accent=savedState?.accent??accentNames[Math.floor(Math.random()*accentNames.length)];
-let gradingScale=savedState?.gradingScale??10,previousAverage=null,bestAverage=null,lastActionChanged=false;
+let gradingScale=savedState?.gradingScale??10;
 let toastTimer;
 
 const colors={green:'#d8ff42',blue:'#8db9ff',red:'#ff9588',yellow:'#ffd96b',purple:'#c5a5ff'};
@@ -52,13 +52,36 @@ function render(){
  $('gradeRange').textContent='[ 0—'+gradingScale+' ]';$('meterMin').textContent='0.00';$('meterMax').textContent=gradingScale.toFixed(2);
  $('meter').innerHTML='';for(let i=0;i<20;i++){const span=document.createElement('span');if(a!==null&&i<Math.round(a/gradingScale*20))span.className='on';$('meter').append(span)}
  const m=mood(a);$('owlAvatar').textContent=m[0];$('owlTitle').textContent=m[1];$('owlMessage').textContent=m[2];$('owlStatus').textContent=m[3];
+ const advice=$('adviceText');if(advice)advice.textContent=m[2];
+ const targets=$('targets');
+ if(targets){
+  targets.innerHTML='';
+  const goalValues=[Math.max(1,Math.ceil(gradingScale*.6)),Math.max(1,Math.ceil(gradingScale*.75)),gradingScale];
+  goalValues.forEach(goal=>{
+   const card=document.createElement('div');card.className='target';
+   const label=document.createElement('div');label.className='target-label';label.textContent=(language==='ru'?'ЦЕЛЬ ':'GOAL ')+goal;
+   const value=document.createElement('div');value.className='target-value';
+   const note=document.createElement('div');note.className='target-note';
+   if(a!==null&&a>=goal){value.textContent='✓';note.textContent=language==='ru'?'Достигнута':'Reached'}
+   else if(n===0){value.textContent='—';note.textContent=language==='ru'?'Добавь оценки':'Add grades'}
+   else{
+    try{
+     const plan=calculateTargetPlan(grades,goal,gradingScale);
+     if(plan.status==='one-grade'){value.textContent=String(plan.nextGradeNeeded);note.textContent=language==='ru'?'Следующая оценка':'Next grade'}
+     else if(plan.status==='multiple-grades'){value.textContent=String(plan.gradesNeeded);note.textContent=language==='ru'?'Оценок по максимуму':'Max grades needed'}
+     else{value.textContent='✓';note.textContent=language==='ru'?'Цель достигнута':'Goal reached'}
+    }catch{value.textContent='—';note.textContent=language==='ru'?'Нет расчёта':'Unavailable'}
+   }
+   card.append(label,value,note);targets.append(card);
+  });
+ }
  const list=$('gradeList');list.innerHTML='';
  if(!n){const e=document.createElement('div');e.className='empty';e.textContent=t('empty');list.append(e)}
  else grades.forEach((g,i)=>{const chip=document.createElement('div');chip.className='grade-chip';const b=document.createElement('b');b.textContent=g;const x=document.createElement('button');x.textContent='×';x.setAttribute('aria-label',language==='ru'?'Удалить оценку':'Remove grade');x.addEventListener('click',()=>changeGrades(()=>grades.splice(i,1)));chip.append(b,x);list.append(chip)});
  
 }
-function changeGrades(change){const before=avg();change();previousAverage=before;const after=avg();lastActionChanged=before!==after;if(after!==null&&(bestAverage===null||after>bestAverage))bestAverage=after;persistState();render()}
-function setScale(value){if(value===gradingScale)return;if(grades.length&&!confirm(t('scaleConfirm')))return;gradingScale=value;grades=[];previousAverage=null;bestAverage=null;lastActionChanged=false;buildGrid();updateScaleButtons();persistState();render()}
+function changeGrades(change){change();persistState();render()}
+function setScale(value){if(value===gradingScale)return;if(grades.length&&!confirm(t('scaleConfirm')))return;gradingScale=value;grades=[];buildGrid();updateScaleButtons();persistState();render()}
 function updateScaleButtons(){[5,10,12].forEach(v=>$('scale'+v+'Btn').classList.toggle('active',gradingScale===v))}
 function buildGrid(){
  $('gradeGrid').innerHTML='';
@@ -74,7 +97,7 @@ $('lightBtn').addEventListener('click',()=>setTheme('light'));$('darkBtn').addEv
 document.querySelectorAll('.color-btn').forEach(b=>b.addEventListener('click',()=>setAccent(b.dataset.color)));
 $('ruBtn').addEventListener('click',()=>{language='ru';updateLanguage()});$('enBtn').addEventListener('click',()=>{language='en';updateLanguage()});
 $('scale5Btn').addEventListener('click',()=>setScale(5));$('scale10Btn').addEventListener('click',()=>setScale(10));$('scale12Btn').addEventListener('click',()=>setScale(12));
-$('cleanBtn').addEventListener('click',()=>{if(!grades.length){toast(language==='ru'?'Список уже пуст':'The list is already empty');return}if(confirm(t('confirm'))){grades=[];previousAverage=null;bestAverage=null;lastActionChanged=false;persistState();render()}});
+$('cleanBtn').addEventListener('click',()=>{if(!grades.length){toast(language==='ru'?'Список уже пуст':'The list is already empty');return}if(confirm(t('confirm'))){grades=[];persistState();render()}});
 buildGrid();setTheme(theme);setAccent(accent);updateScaleButtons();updateLanguage();render();
 fetch('./event.txt',{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error('event.txt not found');return r.text()}).then(text=>{$('eventText').textContent=text.trim()||' ';}).catch(()=>{$('eventText').textContent='Не удалось загрузить event.txt. Запусти страницу через веб-сервер.';});
 })();
