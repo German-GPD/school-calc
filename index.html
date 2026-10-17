@@ -119,7 +119,7 @@ function mood(a){
 function roundedGrade(a){return a===null?null:Math.floor(a+0.5+Number.EPSILON)}
 function render(){
  const n=grades.length,a=avg();
- $('average').textContent=a===null?'—':a.toFixed(2).replace(/0+$/,'').replace(/\\.$/,'');
+ $('average').textContent=a===null?'—':a.toFixed(2).replace(/0+$/,'').replace(/\.$/,'');
  $('gradeCount').textContent=String(n).padStart(2,'0');$('historyCount').textContent=t('count')(n);
  $('outOf').textContent='/ '+gradingScale;$('scaleTag').textContent='0—'+gradingScale+' / '+(language==='ru'?'BY':'SCALE');
  $('gradeRange').textContent='[ 0—'+gradingScale+' ]';$('meterMin').textContent='0.00';$('meterMax').textContent=gradingScale.toFixed(2);
