@@ -80,31 +80,23 @@ Language availability may vary depending on the published version.
 >
 > **Авторство проекта SCHOOL CALC принадлежит German (GERMAN'$ CODE TEAM).**
 >
-> ❌ **ЗАПРЕЩЕНО:**
-> - Копировать код, дизайн или любую часть проекта и **выдавать за своё**
-> - Удалять или изменять указание авторства
-> - Использовать проект в коммерческих целях
-> - Распространять приложение **не по официальным ссылкам** (см. выше)
-> - Публиковать SCHOOL CALC под своим именем или брендом
->
-> ⚠️ **Официальные источники распространения — только ссылки из этого репозитория и Telegram-каналов, указанных выше.** Файлы SCHOOL CALC, скачанные из любых других мест, могут быть изменены и потенциально небезопасны. Мы не несём ответственности за копии, распространяемые третьими лицами.
->
-> 🔨 **Нарушители будут найдены. Копии будут сняты по жалобе DMCA. Мы отслеживаем нарушения.**
+> ### 🇷🇺 Авторство и распространение
 
-> ### 🇬🇧 Attention!
+- Указывайте автора и ссылку на исходный проект при распространении или адаптации.
+- Коммерческое использование не разрешено условиями CC BY-NC 4.0.
+- Не выдавайте чужую работу за свою и отмечайте внесённые изменения.
+- Для оригинальной версии используйте официальные ссылки выше. Сторонние копии могут отличаться; проверяйте источник.
+
+Автор может обратиться к площадке, если считает, что конкретное распространение нарушает применимые права или условия лицензии.
+
+> ### 🇬🇧 Attribution & distribution
 >
-> **SCHOOL CALC is the intellectual property of German (GERMAN'$ CODE TEAM).**
+> - Credit the author and link to the source project when sharing or adapting the work.
+> - Commercial use is not permitted under CC BY-NC 4.0.
+> - Do not claim someone else's work as your own, and indicate changes you make.
+> - Use the official links above for the original release. Third-party copies may differ; verify their source.
 >
-> ❌ **PROHIBITED:**
-> - Copying the code, design, or any part of the project and **claiming it as your own**
-> - Removing or altering attribution
-> - Using the project for commercial purposes
-> - Distributing the application **outside official links** (see above)
-> - Publishing SCHOOL CALC under your own name or brand
->
-> ⚠️ **The only official distribution sources are the links in this repository and the Telegram channels listed above.** Copies of SCHOOL CALC downloaded from anywhere else may be modified and potentially unsafe. We are not responsible for copies distributed by third parties.
->
-> 🔨 **Violators will be tracked down. Copies will be removed via DMCA takedown. We monitor violations.**
+> The author may contact a platform if they believe a particular distribution violates applicable rights or license terms.
 
 ---
 
